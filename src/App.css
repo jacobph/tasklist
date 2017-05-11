@@ -1,9 +1,7 @@
 .App {
-  /*text-align: center;*/
 }
 
 .App-logo {
-  /*animation: App-logo-spin infinite 20s linear;*/
   height: 80px;
 }
 
@@ -23,12 +21,18 @@
   font-size: 2em;
 }
 
+.form-group {
+  display: flex;
+}
+
 .list-group-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.list-group-item span {
+  margin-right: 15px;
 }
+
+

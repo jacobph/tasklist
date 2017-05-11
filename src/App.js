@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo2.svg';
 import List from './components/list';
 import Form from './components/form';
+import Completed from './components/completed';
 import './App.css';
 
 class App extends Component {
@@ -9,13 +10,18 @@ class App extends Component {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
     this.removeTask = this.removeTask.bind(this);
+    this.clearCompleted = this.clearCompleted.bind(this);
+    
     const fromLocal = localStorage.getItem('state');
     if (fromLocal) {
       this.state = (JSON.parse(fromLocal));
     } else {
       this.state = {
-        tasks: ['feed the cat', 'take out the trash', 'do the laundry', 'shop for groceries'],
-        newTask: '',
+        tasks: [
+          'A demo task to get you started',
+          'Click "Complete" to clear these, then add your own'
+        ],
+        completed: []
       };
     }
   }
@@ -33,9 +39,17 @@ class App extends Component {
 
   removeTask(index) {
     const tasks = this.state.tasks.slice(0,index).concat(this.state.tasks.slice(index + 1));
+    const completed = this.state.completed.concat([this.state.tasks[index]]);
     this.setState({
       tasks: tasks,
+      completed: completed,
     });
+  }
+
+  clearCompleted(){
+    this.setState({
+      completed: [],
+    })
   }
 
   render() {
@@ -63,6 +77,14 @@ class App extends Component {
               <List 
                 tasks={this.state.tasks}
                 handleClick={this.removeTask}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-sm-6 col-sm-offset-6">
+              <Completed 
+                tasks={this.state.completed}
+                handleClick={this.clearCompleted}
               />
             </div>
           </div>

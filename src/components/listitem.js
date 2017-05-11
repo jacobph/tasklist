@@ -13,7 +13,7 @@ class ListItem extends Component {
   render() {
     return (
       <li className="list-group-item">
-        {this.props.task}
+        <span>{this.props.task}</span>
         <button 
           className="btn btn-success"
           onClick={this.handleClick}
