@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
-// import ListItem from './listitem';
 
 class Completed extends Component {
-  // constructor(props) {
-  //   super();
-  //   this.handleClick = this.handleClick.bind(this);
-  // }
-
-  // handleClick(index) {
-  //   this.props.handleClick(index);
-  // }
 
   render() {
     if (this.props.tasks.length > 0) {
@@ -24,7 +15,12 @@ class Completed extends Component {
           <ul className="list-group">
             {tasks}
           </ul>
-          <button className="btn btn-danger" onClick={this.props.handleClick}>Clear Completed Tasks</button>
+          <button
+            className="btn btn-danger"
+            onClick={this.props.handleClick}
+          >
+            Clear Completed Tasks 💩
+          </button>
         </div>
       )
     } else {

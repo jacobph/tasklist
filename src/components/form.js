@@ -23,7 +23,7 @@ class Form extends Component {
 	      		className="form-control"
 	      		type="text" 
 	      	/>
-	      	<button className="btn btn-primary">Submit</button>
+	      	<button className="btn btn-primary">Submit ➡</button>
 	      </div>
       </form>
     );

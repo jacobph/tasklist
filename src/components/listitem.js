@@ -17,7 +17,7 @@ class ListItem extends Component {
         <button 
           className="btn btn-success"
           onClick={this.handleClick}
-        >Complete</button>
+        >Complete ✔</button>
       </li>
     );
   }
